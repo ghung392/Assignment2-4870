@@ -166,13 +166,26 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entities\Client.cs" />
+    <Compile Include="Models\Entities\Smart.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Lookup\AbuserRelationship.cs" />
+    <Compile Include="Models\Lookup\Age.cs" />
+    <Compile Include="Models\Lookup\AssignedWorker.cs" />
     <Compile Include="Models\Lookup\Crisis.cs" />
+    <Compile Include="Models\Lookup\DuplicateFile.cs" />
+    <Compile Include="Models\Lookup\Ethnicity.cs" />
+    <Compile Include="Models\Lookup\FamilyViolenceFile.cs" />
     <Compile Include="Models\Lookup\FiscalYear.cs" />
+    <Compile Include="Models\Lookup\Incident.cs" />
     <Compile Include="Models\Lookup\Program.cs" />
+    <Compile Include="Models\Lookup\ReferralContact.cs" />
+    <Compile Include="Models\Lookup\ReferralSource.cs" />
+    <Compile Include="Models\Lookup\RepeatClient.cs" />
     <Compile Include="Models\Lookup\RiskLevel.cs" />
     <Compile Include="Models\Lookup\RiskStatus.cs" />
     <Compile Include="Models\Lookup\Service.cs" />
+    <Compile Include="Models\Lookup\StatusOfFile.cs" />
+    <Compile Include="Models\Lookup\VictimOfIncident.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
