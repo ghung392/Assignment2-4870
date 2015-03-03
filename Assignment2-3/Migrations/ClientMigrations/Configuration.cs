@@ -35,6 +35,12 @@ using System.Linq;
                 relationships.ToArray()
                 );
 
+            List<Age> ages = GetAges();
+            context.Ages.AddOrUpdate(
+                a => new { a.Value },
+                ages.ToArray()
+                );
+
             context.SaveChanges();
         }
         private List<AbuserRelationship> GetAbuserRelationships()
@@ -94,6 +100,33 @@ using System.Linq;
                 }
             };
             return relationships;
+        }
+
+        private List<Age> GetAges()
+        {
+            List<Age> ages = new List<Age> {
+                new Age
+                {
+                    Value="Adult > 24 < 65"
+                },
+                new Age
+                {
+                    Value="Youth > 12 < 19"
+                },
+                new Age
+                {
+                    Value="Youth > 18 < 25"
+                },
+                new Age
+                {
+                    Value="Child < 13"
+                },
+                new Age
+                {
+                    Value="Senior > 64"
+                }
+            };
+            return ages;
         }
     }
 }

@@ -160,6 +160,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AbuserRelationshipsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AgesController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -173,6 +174,10 @@
     <Compile Include="Migrations\ClientMigrations\201503031857445_InitialCreate1.cs" />
     <Compile Include="Migrations\ClientMigrations\201503031857445_InitialCreate1.Designer.cs">
       <DependentUpon>201503031857445_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ClientMigrations\201503032047479_Ages.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503032047479_Ages.Designer.cs">
+      <DependentUpon>201503032047479_Ages.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -220,9 +225,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-Assignment2-3-20150228102721.mdf" />
-    <Content Include="App_Data\aspnet-Assignment2-3-20150228102721_log.ldf">
-      <DependentUpon>aspnet-Assignment2-3-20150228102721.mdf</DependentUpon>
+    <Content Include="App_Data\GoodSamaritan.mdf" />
+    <Content Include="App_Data\GoodSamaritan_log.ldf">
+      <DependentUpon>GoodSamaritan.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -290,6 +295,11 @@
     <Content Include="Views\AbuserRelationships\Details.cshtml" />
     <Content Include="Views\AbuserRelationships\Edit.cshtml" />
     <Content Include="Views\AbuserRelationships\Index.cshtml" />
+    <Content Include="Views\Ages\Create.cshtml" />
+    <Content Include="Views\Ages\Delete.cshtml" />
+    <Content Include="Views\Ages\Details.cshtml" />
+    <Content Include="Views\Ages\Edit.cshtml" />
+    <Content Include="Views\Ages\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -305,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ClientMigrations\201503031857445_InitialCreate1.resx">
       <DependentUpon>201503031857445_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503032047479_Ages.resx">
+      <DependentUpon>201503032047479_Ages.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
