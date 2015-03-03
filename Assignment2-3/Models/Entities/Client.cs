@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2_3.Models.Entities
 {
-    class Client
+    public class Client
     {
         [Key]
         public int ClientReferenceNumber { get; set; }
@@ -30,7 +30,8 @@ namespace Assignment2_3.Models.Entities
         public ReferralContact ReferralContact { get; set; }
         public Incident Incident { get; set; }
         public string AbuserName { get; set; }
-        public AbuserRelationship AbuserRelationship { get; set; }
+        [UIHint("AbuserRelationshipDropDown")]
+        public object AbuserRelationship { get; set; }
         public VictimOfIncident VictimOfIncident { get; set; }
         public FamilyViolenceFile FamilyViolenceFile { get; set; }
         public char Gender { get; set; }

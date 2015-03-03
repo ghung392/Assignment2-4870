@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Assignment2_3.Models.Lookup
 {
-    class AbuserRelationship
+    public class AbuserRelationship
     {
         [Key]
         public int AbuserRelationshipId { get; set; }
-        public string Relationship { get; set; }
+        public string AbuRelationship { get; set; }
 
         public ICollection<Client> Clients { get; set; }
     }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2_3.Models.Lookup
 {
-    class FiscalYear
+    public class FiscalYear
     {
         [Key]
         public int FiscalYearId { get; set; }

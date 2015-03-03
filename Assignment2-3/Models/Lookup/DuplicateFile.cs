@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2_3.Models.Lookup
 {
-    class DuplicateFile
+    public class DuplicateFile
     {
         [Key]
         public int DuplicateFileId { get; set; }

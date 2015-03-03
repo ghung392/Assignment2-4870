@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2_3.Models.Lookup
 {
-    class Service
+    public class Service
     {
         [Key]
         public int ServiceId { get; set; }

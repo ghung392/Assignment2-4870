@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2_3.Models.Lookup
 {
-    class RepeatClient
+    public class RepeatClient
     {
         [Key]
         public int RepeatClientId { get; set; }

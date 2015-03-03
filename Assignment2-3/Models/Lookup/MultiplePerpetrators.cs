@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2_3.Models.Lookup
 {
-    class MultiplePerpetrators
+    public class MultiplePerpetrators
     {
         [Key]
         public int MultiplePerpetratorsId { get; set; }

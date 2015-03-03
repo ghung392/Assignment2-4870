@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2_3.Models.Entities
 {
-    class Smart
+    public class Smart
     {
         [Key]
         virtual public int ClientReferenceNumber { get; set; }

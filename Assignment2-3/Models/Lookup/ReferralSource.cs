@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2_3.Models.Lookup
 {
-    class ReferralSource
+    public class ReferralSource
     {
         [Key]
         public int ReferralSourceId { get; set; }

@@ -31,64 +31,66 @@ using System.Linq;
             //
             List<AbuserRelationship> relationships = GetAbuserRelationships();
             context.AbuserRelationships.AddOrUpdate(
-                a => new { a.Relationship },
+                a => new { a.AbuRelationship },
                 relationships.ToArray()
                 );
+
+            context.SaveChanges();
         }
         private List<AbuserRelationship> GetAbuserRelationships()
         {
             List<AbuserRelationship> relationships = new List<AbuserRelationship> {
                 new AbuserRelationship
                 {
-                    Relationship="Acquaintance"
+                    AbuRelationship="Acquaintance"
                 },
                 new AbuserRelationship
                 {
-                    Relationship="Bad Date"
+                    AbuRelationship="Bad Date"
                 },
                 new AbuserRelationship
                 {
-                    Relationship="DNA"
+                    AbuRelationship="DNA"
                 },
                 new AbuserRelationship
                 {
-                    Relationship="Ex-Partner"
+                    AbuRelationship="Ex-Partner"
                 },
                 new AbuserRelationship
                 {
-                    Relationship="Friend"
+                    AbuRelationship="Friend"
                 },
                 new AbuserRelationship
                 {
-                    Relationship="Multiple Perps"
+                    AbuRelationship="Multiple Perps"
                 },
                 new AbuserRelationship
                 {
-                    Relationship="N/A"
+                    AbuRelationship="N/A"
                 },
                 new AbuserRelationship
                 {
-                    Relationship="Other"
+                    AbuRelationship="Other"
                 },
                 new AbuserRelationship
                 {
-                    Relationship="Other Familial"
+                    AbuRelationship="Other Familial"
                 },
                 new AbuserRelationship
                 {
-                    Relationship="Parent"
+                    AbuRelationship="Parent"
                 },
                 new AbuserRelationship
                 {
-                    Relationship="Partner"
+                    AbuRelationship="Partner"
                 },
                 new AbuserRelationship
                 {
-                    Relationship="Sibling"
+                    AbuRelationship="Sibling"
                 },
                 new AbuserRelationship
                 {
-                    Relationship="Stranger"
+                    AbuRelationship="Stranger"
                 }
             };
             return relationships;

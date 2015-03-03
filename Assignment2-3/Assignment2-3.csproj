@@ -158,11 +158,21 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AbuserRelationshipsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ClientMigrations\201503031816496_InitialCreate.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503031816496_InitialCreate.Designer.cs">
+      <DependentUpon>201503031816496_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ClientMigrations\201503031857445_InitialCreate1.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503031857445_InitialCreate1.Designer.cs">
+      <DependentUpon>201503031857445_InitialCreate1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -210,6 +220,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-Assignment2-3-20150228102721.mdf" />
+    <Content Include="App_Data\aspnet-Assignment2-3-20150228102721_log.ldf">
+      <DependentUpon>aspnet-Assignment2-3-20150228102721.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -265,16 +279,33 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Clients\Create.cshtml" />
+    <Content Include="Views\Clients\Delete.cshtml" />
+    <Content Include="Views\Clients\Details.cshtml" />
+    <Content Include="Views\Clients\Edit.cshtml" />
+    <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\Clients\EditorTemplates\AbuserRelationshipDropDown.cshtml" />
+    <Content Include="Views\AbuserRelationships\Create.cshtml" />
+    <Content Include="Views\AbuserRelationships\Delete.cshtml" />
+    <Content Include="Views\AbuserRelationships\Details.cshtml" />
+    <Content Include="Views\AbuserRelationships\Edit.cshtml" />
+    <Content Include="Views\AbuserRelationships\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503031816496_InitialCreate.resx">
+      <DependentUpon>201503031816496_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503031857445_InitialCreate1.resx">
+      <DependentUpon>201503031857445_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
