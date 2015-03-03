@@ -1,6 +1,7 @@
 ﻿using Assignment2_3.Models.Lookup;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace Assignment2_3.Models.Entities
 {
     class Client
     {
+        [Key]
         public int ClientReferenceNumber { get; set; }
         public FiscalYear FiscalYear { get; set; }
         public int Month { get; set; }

@@ -11,8 +11,8 @@ namespace Assignment2_3.Models.Entities
 {
     class Smart
     {
-        [ForeignKey("Client")]
-        public int ClientReferenceNumber { get; set; }
+        [Key]
+        virtual public int ClientReferenceNumber { get; set; }
         public SexWork SexWork { get; set; }
         public MultiplePerpetrators MultiplePerpetrators { get; set; }
         public DrugAssault DrugAssault { get; set; }
