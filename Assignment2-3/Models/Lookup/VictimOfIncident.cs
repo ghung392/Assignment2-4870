@@ -11,8 +11,8 @@ namespace Assignment2_3.Models.Lookup
     public class VictimOfIncident
     {
         [Key]
-        public int FiscalYearId { get; set; }
-        public string Year { get; set; }
+        public int VictimOfIncidentId { get; set; }
+        public string Description { get; set; }
 
         public ICollection<Client> Clients { get; set; }
     }

@@ -167,19 +167,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ClientMigrations\201503031816496_InitialCreate.cs" />
-    <Compile Include="Migrations\ClientMigrations\201503031816496_InitialCreate.Designer.cs">
-      <DependentUpon>201503031816496_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\ClientsMigrations\201503040336506_AllLookup.cs" />
+    <Compile Include="Migrations\ClientsMigrations\201503040336506_AllLookup.Designer.cs">
+      <DependentUpon>201503040336506_AllLookup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ClientMigrations\201503031857445_InitialCreate1.cs" />
-    <Compile Include="Migrations\ClientMigrations\201503031857445_InitialCreate1.Designer.cs">
-      <DependentUpon>201503031857445_InitialCreate1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\ClientMigrations\201503032047479_Ages.cs" />
-    <Compile Include="Migrations\ClientMigrations\201503032047479_Ages.Designer.cs">
-      <DependentUpon>201503032047479_Ages.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
+    <Compile Include="Migrations\ClientsMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entities\Client.cs" />
     <Compile Include="Models\Entities\ClientContext.cs" />
@@ -301,24 +293,17 @@
     <Content Include="Views\Ages\Edit.cshtml" />
     <Content Include="Views\Ages\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\ClientsMigrations\201503040336506_AllLookup.resx">
+      <DependentUpon>201503040336506_AllLookup.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201503031816496_InitialCreate.resx">
-      <DependentUpon>201503031816496_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201503031857445_InitialCreate1.resx">
-      <DependentUpon>201503031857445_InitialCreate1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201503032047479_Ages.resx">
-      <DependentUpon>201503032047479_Ages.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

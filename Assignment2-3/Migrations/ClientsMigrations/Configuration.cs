@@ -1,4 +1,4 @@
-namespace Assignment2_3.Migrations.ClientMigrations
+namespace Assignment2_3.Migrations.ClientsMigrations
 {
     using Assignment2_3.Models.Lookup;
 using System;
@@ -12,23 +12,11 @@ using System.Linq;
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            MigrationsDirectory = @"Migrations\ClientMigrations";
+            MigrationsDirectory = @"Migrations\ClientsMigrations";
         }
 
         protected override void Seed(Assignment2_3.Models.Entities.ClientContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
             List<AbuserRelationship> relationships = GetAbuserRelationships();
             context.AbuserRelationships.AddOrUpdate(
                 a => new { a.AbuRelationship },
@@ -39,6 +27,12 @@ using System.Linq;
             context.Ages.AddOrUpdate(
                 a => new { a.Value },
                 ages.ToArray()
+                );
+
+            List<VictimOfIncident> victimsOfIncident = GetVictimsOfIncident();
+            context.VictimsOfIncident.AddOrUpdate(
+                a => new { a.Description},
+                victimsOfIncident.ToArray()
                 );
 
             context.SaveChanges();
@@ -128,5 +122,21 @@ using System.Linq;
             };
             return ages;
         }
+
+        private List<VictimOfIncident> GetVictimsOfIncident()
+        {
+            List<VictimOfIncident> victimsOfIncident = new List<VictimOfIncident> {
+                new VictimOfIncident
+                {
+                    Description="Primary"
+                },
+                new VictimOfIncident
+                {
+                    Description="Secondary"
+                }
+            };
+            return victimsOfIncident;
+        }
+     
     }
 }
