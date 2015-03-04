@@ -13,24 +13,24 @@ namespace Assignment2_3.Models.Entities
     {
         [Key]
         virtual public int ClientReferenceNumber { get; set; }
-        public SexWork SexWork { get; set; }
-        public MultiplePerpetrators MultiplePerpetrators { get; set; }
-        public DrugAssault DrugAssault { get; set; }
-        public CityOfAssault CityOfAssault { get; set; }
-        public CityOfResidence CityOfResidence { get; set; }
+        public object SexWork { get; set; }
+        public object MultiplePerpetrators { get; set; }
+        public object DrugAssault { get; set; }
+        public object CityOfAssault { get; set; }
+        public object CityOfResidence { get; set; }
         public int AccompanimentMinutes { get; set; }
-        public ReferringHospital ReferringHospital { get; set; }
-        public HospitalAttended HospitalAttended { get; set; }
-        public SocialWorkAttendance SocialWorkAttendance { get; set; }
-        public PoliceAttendance PoliceAttendance { get; set; }
-        public VictimServicesAttendance VictimServicesAttendance { get; set; }
-        public MedicalOnly MedicalOnly { get; set; }
-        public EvidenceStored EvidenceStored { get; set; }
-        public HivMeds HivMeds { get; set; }
-        public ReferredCbvs ReferredCbvs { get; set; }
-        public PoliceReported PoliceReported { get; set; }
-        public ThirdPartyReport ThirdPartyReport { get; set; }
-        public BadDateReport BadDateReport { get; set; }
+        public object ReferringHospital { get; set; }
+        public object HospitalAttended { get; set; }
+        public object SocialWorkAttendance { get; set; }
+        public object PoliceAttendance { get; set; }
+        public object VictimServicesAttendance { get; set; }
+        public object MedicalOnly { get; set; }
+        public object EvidenceStored { get; set; }
+        public object HivMeds { get; set; }
+        public object ReferredCbvs { get; set; }
+        public object PoliceReported { get; set; }
+        public object ThirdPartyReport { get; set; }
+        public object BadDateReport { get; set; }
         public int NumTransportsProvided { get; set; }
         public bool ReferredToNurse { get; set; }
     }
