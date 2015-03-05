@@ -12,6 +12,8 @@ namespace Assignment2_3.Models.Lookup
     {
         [Key]
         public int RiskStatusId { get; set; }
+        [Required]
+        [MaxLength(40), MinLength(3)]
         public string Status { get; set; }
 
         public ICollection<Client> Clients { get; set; }

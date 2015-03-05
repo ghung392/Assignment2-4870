@@ -12,6 +12,8 @@ namespace Assignment2_3.Models.Lookup
     {
         [Key]
         public int DrugAssaultId { get; set; }
+        [Required]
+        [MaxLength(40), MinLength(3)]
         public string Description { get; set; }
 
         public ICollection<Smart> Smarts { get; set; }

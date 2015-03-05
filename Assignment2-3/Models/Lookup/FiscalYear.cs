@@ -12,6 +12,8 @@ namespace Assignment2_3.Models.Lookup
     {
         [Key]
         public int FiscalYearId { get; set; }
+        [Required]
+        [MaxLength(40), MinLength(3)]
         public string Year { get; set; }
 
         public ICollection<Client> Clients { get; set; }

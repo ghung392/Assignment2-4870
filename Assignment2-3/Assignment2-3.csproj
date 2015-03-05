@@ -220,6 +220,18 @@
     <Compile Include="Migrations\ClientsMigrations\201503040533586_MoreNullable.Designer.cs">
       <DependentUpon>201503040533586_MoreNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ClientsMigrations\201503050524385_Validation0.cs" />
+    <Compile Include="Migrations\ClientsMigrations\201503050524385_Validation0.Designer.cs">
+      <DependentUpon>201503050524385_Validation0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ClientsMigrations\201503050527222_Validation1.cs" />
+    <Compile Include="Migrations\ClientsMigrations\201503050527222_Validation1.Designer.cs">
+      <DependentUpon>201503050527222_Validation1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ClientsMigrations\201503050534234_Validation2.cs" />
+    <Compile Include="Migrations\ClientsMigrations\201503050534234_Validation2.Designer.cs">
+      <DependentUpon>201503050534234_Validation2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ClientsMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entities\Client.cs" />
@@ -524,6 +536,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ClientsMigrations\201503040533586_MoreNullable.resx">
       <DependentUpon>201503040533586_MoreNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ClientsMigrations\201503050524385_Validation0.resx">
+      <DependentUpon>201503050524385_Validation0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ClientsMigrations\201503050527222_Validation1.resx">
+      <DependentUpon>201503050527222_Validation1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ClientsMigrations\201503050534234_Validation2.resx">
+      <DependentUpon>201503050534234_Validation2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

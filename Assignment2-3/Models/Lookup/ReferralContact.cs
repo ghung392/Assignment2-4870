@@ -12,6 +12,8 @@ namespace Assignment2_3.Models.Lookup
     {
         [Key]
         public int ReferralContactId { get; set; }
+        [Required]
+        [MaxLength(40), MinLength(3)]
         public string Contact { get; set; }
 
         public ICollection<Client> Clients { get; set; }

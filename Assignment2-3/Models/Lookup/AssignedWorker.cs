@@ -12,6 +12,8 @@ namespace Assignment2_3.Models.Lookup
     {
         [Key]
         public int AssignedWorkerId { get; set; }
+        [Required]
+        [MaxLength(40), MinLength(3)]
         public string Worker { get; set; }
 
         public ICollection<Client> Clients { get; set; }

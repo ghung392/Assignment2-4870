@@ -12,6 +12,8 @@ namespace Assignment2_3.Models.Lookup
     {
         [Key]
         public int ServiceId { get; set; }
+        [Required]
+        [MaxLength(40), MinLength(3)]
         public string Type { get; set; }
 
         public ICollection<Client> Clients { get; set; }
