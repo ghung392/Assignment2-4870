@@ -24,45 +24,45 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>
-                        <select id="LinkList" onchange="doNavigate()">
-                            <option value="">Lookup Lists</option>
-                            <option value="@Url.Action("Index", "AbuserRelationships")">Abuser Relationships</option>
-                            <option value="@Url.Action("Index", "Ages")">Ages</option>
-                            <option value="@Url.Action("Index", "AssignedWorkers")">Assigned Workers</option>
-                            <option value="@Url.Action("Index", "BadDateReports")">Bad Date Reports</option>
-                            <option value="@Url.Action("Index", "CityOfAssaults")">City Of Assaults</option>
-                            <option value="@Url.Action("Index", "CityOfResidences")">City Of Residences</option>
-                            <option value="@Url.Action("Index", "Crises")">Crises</option>
-                            <option value="@Url.Action("Index", "DrugAssaults")">Drug Assaults</option>
-                            <option value="@Url.Action("Index", "DuplicateFiles")">Duplicate Files</option>
-                            <option value="@Url.Action("Index", "Ethnicities")">Ethnicities</option>
-                            <option value="@Url.Action("Index", "EvidenceStoreds")">Evidences Stored</option>
-                            <option value="@Url.Action("Index", "FamilyViolenceFiles")">Family Violence Files</option>
-                            <option value="@Url.Action("Index", "FiscalYears")">Fiscal Years</option>
-                            <option value="@Url.Action("Index", "HivMeds")">Hiv Meds</option>
-                            <option value="@Url.Action("Index", "HospitalAttendeds")">Hospitals Attended</option>
-                            <option value="@Url.Action("Index", "Incidents")">Incidents</option>
-                            <option value="@Url.Action("Index", "MedicalOnlies")">Medical Onlies</option>
-                            <option value="@Url.Action("Index", "MultiplePerpetrators")">Multiple Perpetrators</option>
-                            <option value="@Url.Action("Index", "PoliceAttendances")">Police Attendances</option>
-                            <option value="@Url.Action("Index", "PoliceReporteds")">Polices Reported</option>
-                            <option value="@Url.Action("Index", "Programs")">Programs</option>
-                            <option value="@Url.Action("Index", "ReferralContacts")">Referral Contacts</option>
-                            <option value="@Url.Action("Index", "ReferralSources")">Referral Sources</option>
-                            <option value="@Url.Action("Index", "ReferredCbvs")">Referred Cbvs</option>
-                            <option value="@Url.Action("Index", "ReferringHospitals")">Referring Hospitals</option>
-                            <option value="@Url.Action("Index", "RepeatClients")">Repeat Clients</option>
-                            <option value="@Url.Action("Index", "RiskLevels")">Risk Levels</option>
-                            <option value="@Url.Action("Index", "RiskStatus")">Risk Status</option>
-                            <option value="@Url.Action("Index", "Services")">Services</option>
-                            <option value="@Url.Action("Index", "SexWorks")">Sex Works</option>
-                            <option value="@Url.Action("Index", "SocialWorkAttendances")">Social Work Attendances</option>
-                            <option value="@Url.Action("Index", "StatusOfFiles")">Status Of Files</option>
-                            <option value="@Url.Action("Index", "ThirdPartyReports")">Third Party Reports</option>
-                            <option value="@Url.Action("Index", "VictimOfIncidents")">Victim Of Incidents</option>
-                            <option value="@Url.Action("Index", "VictimServicesAttendances")">Victim Services Attendances</option>
-                        </select>
+                    <li class="dropdown">
+                        <a href="a" class="dropdown-toggle" data-toggle="dropdown">Lookup Lists<b class="caret"></b></a>
+                        <ul class="dropdown-menu scrollable-menu" role="menu">
+                            <li>@Html.ActionLink("Abuser Relationship", "Index", "AbuserRelationships")</li>
+                            <li>@Html.ActionLink("Ages", "Index", "Ages")</li>
+                            <li>@Html.ActionLink("Assigned Workers", "Index", "AssignedWorkers")</li>
+                            <li>@Html.ActionLink("Bad Date Reports", "Index", "BadDateReports")</li>
+                            <li>@Html.ActionLink("City of Assaults", "Index", "CityOfAssaults")</li>
+                            <li>@Html.ActionLink("City of Residences", "Index", "CityOfResidences")</li>
+                            <li>@Html.ActionLink("Crises", "Index", "Crises")</li>
+                            <li>@Html.ActionLink("Drug Assaults", "Index", "DrugAssaults")</li>
+                            <li>@Html.ActionLink("Duplicate Files", "Index", "DuplicateFiles")</li>
+                            <li>@Html.ActionLink("Ethnicities", "Index", "Ethnicities")</li>
+                            <li>@Html.ActionLink("Evidences Stored", "Index", "EvidenceStoreds")</li>
+                            <li>@Html.ActionLink("Family Violence Files", "Index", "FamilyViolenceFiles")</li>
+                            <li>@Html.ActionLink("Fiscal Years", "Index", "FiscalYears")</li>
+                            <li>@Html.ActionLink("Hiv Meds", "Index", "HivMeds")</li>
+                            <li>@Html.ActionLink("Hospitals Attended", "Index", "HospitalAttendeds")</li>
+                            <li>@Html.ActionLink("Incidents", "Index", "Incidents")</li>
+                            <li>@Html.ActionLink("Medical Onlies", "Index", "MedicalOnlines")</li>
+                            <li>@Html.ActionLink("Multiple Perpetrators", "Index", "MultiplePerpetrators")</li>
+                            <li>@Html.ActionLink("Police Attendances", "Index", "PoliceAttendances")</li>
+                            <li>@Html.ActionLink("Polices Reported", "Index", "PoliceReporteds")</li>
+                            <li>@Html.ActionLink("Programs", "Index", "Programs")</li>
+                            <li>@Html.ActionLink("Referral Contacts", "Index", "ReferralContacts")</li>
+                            <li>@Html.ActionLink("Referral Sources", "Index", "ReferralSources")</li>
+                            <li>@Html.ActionLink("Referred Cbvs", "Index", "ReferredCbvs")</li>
+                            <li>@Html.ActionLink("Referring Hospitals", "Index", "ReferringHospitals")</li>
+                            <li>@Html.ActionLink("Repeat Clients", "Index", "RepeatClients")</li>
+                            <li>@Html.ActionLink("Risk Levels", "Index", "RiskLevels")</li>
+                            <li>@Html.ActionLink("Risk Status", "Index", "RiskStatus")</li>
+                            <li>@Html.ActionLink("Services", "Index", "Services")</li>
+                            <li>@Html.ActionLink("Sex Works", "Index", "SexWorks")</li>
+                            <li>@Html.ActionLink("Social Work Attendances", "Index", "SocialWorkAttendances")</li>
+                            <li>@Html.ActionLink("Status Of Files", "Index", "StatusOfFiles")</li>
+                            <li>@Html.ActionLink("Third Party Reports", "Index", "ThirdPartyReports")</li>
+                            <li>@Html.ActionLink("Victim Of Incidents", "Index", "VictimOfIncidents")</li>
+                            <li>@Html.ActionLink("Victim Services Attendances", "Index", "VictimServicesAttendances")</li>
+                        </ul>
                     </li>
                     <li>@Html.ActionLink("Clients", "Index", "Clients")</li>
                 </ul>
@@ -77,12 +77,6 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
-    <script>
-        function doNavigate() {
-            window.location.href = document.getElementById("LinkList").value;
-        }
-    </script>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

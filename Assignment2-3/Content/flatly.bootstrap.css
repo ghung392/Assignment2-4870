@@ -1559,6 +1559,11 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
 .container {
   margin-right: auto;
   margin-left: auto;
