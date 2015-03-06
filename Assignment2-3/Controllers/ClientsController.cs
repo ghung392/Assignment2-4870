@@ -11,6 +11,7 @@ using Assignment2_3.Models.Entities;
 
 namespace Assignment2_3.Controllers
 {
+    [Authorize(Roles = "Worker")]
     public class ClientsController : Controller
     {
         private ClientContext db = new ClientContext();

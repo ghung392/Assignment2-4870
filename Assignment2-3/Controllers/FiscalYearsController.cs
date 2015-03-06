@@ -12,6 +12,7 @@ using Assignment2_3.Models.Lookup;
 
 namespace Assignment2_3.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class FiscalYearsController : Controller
     {
         private ClientContext db = new ClientContext();
