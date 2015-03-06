@@ -233,6 +233,15 @@
       <DependentUpon>201503050534234_Validation2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ClientsMigrations\Configuration.cs" />
+    <Compile Include="Migrations\IdentityMigrations\201503011813578_InitialCreate.cs" />
+    <Compile Include="Migrations\IdentityMigrations\201503011813578_InitialCreate.Designer.cs">
+      <DependentUpon>201503011813578_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\IdentityMigrations\201503060453399_AddUsers.cs" />
+    <Compile Include="Migrations\IdentityMigrations\201503060453399_AddUsers.Designer.cs">
+      <DependentUpon>201503060453399_AddUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\IdentityMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entities\Client.cs" />
     <Compile Include="Models\Entities\ClientContext.cs" />
@@ -520,6 +529,9 @@
     <Content Include="Views\VictimServicesAttendances\Details.cshtml" />
     <Content Include="Views\VictimServicesAttendances\Edit.cshtml" />
     <Content Include="Views\VictimServicesAttendances\Index.cshtml" />
+    <Content Include="Views\Account\RoleIndex.cshtml" />
+    <Content Include="Views\Account\RoleAddToUser.cshtml" />
+    <Content Include="Views\Account\RoleCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\ClientsMigrations\201503040336506_AllLookup.resx">
@@ -545,6 +557,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ClientsMigrations\201503050534234_Validation2.resx">
       <DependentUpon>201503050534234_Validation2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\IdentityMigrations\201503011813578_InitialCreate.resx">
+      <DependentUpon>201503011813578_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\IdentityMigrations\201503060453399_AddUsers.resx">
+      <DependentUpon>201503060453399_AddUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
