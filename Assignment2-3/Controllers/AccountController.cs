@@ -473,11 +473,17 @@ namespace Assignment2_3.Controllers
                 var roleManager = new RoleManager<IdentityRole>(roleStore);
                 var role = roleManager.FindByName(roleName);
 
-                roleManager.Delete(role);
-                context.SaveChanges();
+                if (roleName == "Administrator")
+                {
+                    ViewBag.ResultMessage = "Cannot delete administrator role";
+                } else {
+                    roleManager.Delete(role);
+                    context.SaveChanges();
+                    ViewBag.ResultMessage = "Role deleted succesfully !";
+                }
             }
 
-            ViewBag.ResultMessage = "Role deleted succesfully !";
+            //ViewBag.ResultMessage = "Role deleted succesfully !";
             return RedirectToAction("RoleIndex", "Account");
         }
 
@@ -612,7 +618,18 @@ namespace Assignment2_3.Controllers
                 if (user == null)
                     throw new Exception("User not found!");
 
-                if (userManager.IsInRole(user.Id, roleName))
+                var count = (from u in userManager.Users
+                             from ur in u.Roles
+                             join r in roleManager.Roles on ur.RoleId equals r.Id
+                             where r.Name == "Administrator"
+                             select r.Name).Count();
+
+                if(count == 1)
+                {
+                    ViewBag.ResultMessage = "There must be at least one administrator. Cannot remove.";
+                }
+
+                else if (userManager.IsInRole(user.Id, roleName))
                 {
                     userManager.RemoveFromRole(user.Id, roleName);
                     context.SaveChanges();
