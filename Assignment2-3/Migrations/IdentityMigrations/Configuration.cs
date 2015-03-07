@@ -47,16 +47,6 @@ namespace Assignment2_3.Migrations.IdentityMigrations
                 manager.Create(role);
             }
 
-            if (!context.Roles.Any(r => r.Name == "Active User"))
-            {
-                var store = new RoleStore<IdentityRole>(context);
-                var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole { Name = "Active User" };
-
-                manager.Create(role);
-            }
-
-
             if (!context.Users.Any(u => u.UserName == "adam@gs.ca"))
             {
                 var store = new UserStore<ApplicationUser>(context);
@@ -75,7 +65,6 @@ namespace Assignment2_3.Migrations.IdentityMigrations
 
                 manager.Create(user, "P@$$w0rd");
                 manager.AddToRole(user.Id, "Worker");
-                manager.AddToRole(user.Id, "Active User");
             }
 
             if (!context.Users.Any(u => u.UserName == "rob@gs.ca"))
@@ -86,8 +75,11 @@ namespace Assignment2_3.Migrations.IdentityMigrations
 
                 manager.Create(user, "P@$$w0rd");
                 manager.AddToRole(user.Id, "Reporter");
-                manager.AddToRole(user.Id, "Active User");
             }
+
+            //var userStore = new UserStore<ApplicationUser>(context);
+            //var userManager = new UserManager<ApplicationUser>(userStore);
+            //userManager.UserLockoutEnabledByDefault = false;
         }
     }
 }

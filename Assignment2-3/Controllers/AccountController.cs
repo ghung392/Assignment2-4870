@@ -77,7 +77,17 @@ namespace Assignment2_3.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = SignInStatus.Success;
+            var user = UserManager.FindByName(model.Email);
+            if (user.LockoutEnabled == true)
+            {
+                result = SignInStatus.LockedOut;
+            }
+            else
+            {
+                result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            }
+
             switch (result)
             {
                 case SignInStatus.Success:
@@ -153,8 +163,9 @@ namespace Assignment2_3.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, LockoutEnabled=false };
                 var result = await UserManager.CreateAsync(user, model.Password);
+                UserManager.SetLockoutEnabled(user.Id, false);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
@@ -650,6 +661,98 @@ namespace Assignment2_3.Controllers
             ViewBag.RolesForThisUser = userRoles;
             ViewBag.Roles = new SelectList(roles);
             ViewBag.Users = new SelectList(users);
+            return View("RoleAddToUser");
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Administrator")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DisableUser(string userName)
+        {
+            List<string> users;
+            List<string> userRoles;
+            List<string> roles;
+            using (var context = new ApplicationDbContext())
+            {
+                var roleStore = new RoleStore<IdentityRole>(context);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+
+                roles = (from r in roleManager.Roles select r.Name).ToList();
+
+                var userStore = new UserStore<ApplicationUser>(context);
+                var userManager = new UserManager<ApplicationUser>(userStore);
+
+                users = (from u in userManager.Users select u.UserName).ToList();
+
+                var user = userManager.FindByName(userName);
+                if (user == null)
+                    throw new Exception("User not found!");
+
+                if(user.LockoutEnabled == true)
+                {
+                    ViewBag.ResultMessage = "User already disabled.";
+                } else{
+                    UserManager.SetLockoutEnabled(user.Id, true);
+                    ViewBag.ResultMessage = "User successfully disabled.";
+                }
+
+                var userRoleIds = (from r in user.Roles select r.RoleId);
+                userRoles = (from id in userRoleIds
+                             let r = roleManager.FindById(id)
+                             select r.Name).ToList();
+
+            }
+
+            ViewBag.Users = new SelectList(users);
+            ViewBag.RolesForThisUser = userRoles;
+            ViewBag.Roles = new SelectList(roles);
+            return View("RoleAddToUser");
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Administrator")]
+        [ValidateAntiForgeryToken]
+        public ActionResult EnableUser(string userName)
+        {
+            List<string> users;
+            List<string> userRoles;
+            List<string> roles;
+            using (var context = new ApplicationDbContext())
+            {
+                var roleStore = new RoleStore<IdentityRole>(context);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+
+                roles = (from r in roleManager.Roles select r.Name).ToList();
+
+                var userStore = new UserStore<ApplicationUser>(context);
+                var userManager = new UserManager<ApplicationUser>(userStore);
+
+                users = (from u in userManager.Users select u.UserName).ToList();
+
+                var user = userManager.FindByName(userName);
+                if (user == null)
+                    throw new Exception("User not found!");
+
+                if (user.LockoutEnabled == false)
+                {
+                    ViewBag.ResultMessage = "User already enabled.";
+                }
+                else
+                {
+                    UserManager.SetLockoutEnabled(user.Id, false);
+                    ViewBag.ResultMessage = "User successfully enabled.";
+                }
+
+                var userRoleIds = (from r in user.Roles select r.RoleId);
+                userRoles = (from id in userRoleIds
+                             let r = roleManager.FindById(id)
+                             select r.Name).ToList();
+
+            }
+
+            ViewBag.Users = new SelectList(users);
+            ViewBag.RolesForThisUser = userRoles;
+            ViewBag.Roles = new SelectList(roles);
             return View("RoleAddToUser");
         }
 

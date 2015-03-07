@@ -245,6 +245,14 @@
     <Compile Include="Migrations\IdentityMigrations\201503060533396_AddActiveUserRole.Designer.cs">
       <DependentUpon>201503060533396_AddActiveUserRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\IdentityMigrations\201503062221456_SetLockoutDefault.cs" />
+    <Compile Include="Migrations\IdentityMigrations\201503062221456_SetLockoutDefault.Designer.cs">
+      <DependentUpon>201503062221456_SetLockoutDefault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\IdentityMigrations\201503062245005_RemoveActiveUserRole.cs" />
+    <Compile Include="Migrations\IdentityMigrations\201503062245005_RemoveActiveUserRole.Designer.cs">
+      <DependentUpon>201503062245005_RemoveActiveUserRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\IdentityMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entities\Client.cs" />
@@ -570,6 +578,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\IdentityMigrations\201503060533396_AddActiveUserRole.resx">
       <DependentUpon>201503060533396_AddActiveUserRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\IdentityMigrations\201503062221456_SetLockoutDefault.resx">
+      <DependentUpon>201503062221456_SetLockoutDefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\IdentityMigrations\201503062245005_RemoveActiveUserRole.resx">
+      <DependentUpon>201503062245005_RemoveActiveUserRole.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

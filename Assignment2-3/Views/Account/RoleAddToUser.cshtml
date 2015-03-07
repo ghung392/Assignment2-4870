@@ -6,13 +6,14 @@
     <p>&nbsp;</p>
     @Html.ActionLink("Create New Role", "RoleCreate") | @Html.ActionLink("Roles", "RoleIndex")
 
+    <div class="message-success" style="color:red"><h3>@ViewBag.ResultMessage</h3></div>
+
     <h2>Add role to user</h2>
     @using (Html.BeginForm("RoleAddToUser", "Account"))
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
 
-        <div class="message-success">@ViewBag.ResultMessage</div>
         <p>
             Username : @Html.DropDownList("UserName", ViewBag.Users as SelectList)
             Role Name: @Html.DropDownList("RoleName", ViewBag.Roles as SelectList)
@@ -56,5 +57,31 @@
                 }
             </ol>
         </text>
+    }
+    
+    <h2>Disable Users</h2>
+    @using (Html.BeginForm("DisableUser", "Account"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <p>
+            Username : @Html.DropDownList("UserName", ViewBag.Users as SelectList)
+        </p>
+
+        <input type="submit" value="Disable" />
+    }
+
+    <h2>Enable Users</h2>
+    @using (Html.BeginForm("EnableUser", "Account"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <p>
+            Username : @Html.DropDownList("UserName", ViewBag.Users as SelectList)
+        </p>
+
+        <input type="submit" value="Enable" />
     }
 </div>
